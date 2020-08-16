@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Encuesta</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form id="form">
+      <div id="title">
+        <h2 class="titulo">Encuesta</h2>
+      </div>
+      <div id="descripcion">
+        <p>
+          Este es un formulario que nos permitirá conocer más el comportamiento
+          que posee la población y las medidas que se estan tomando durante esta
+          pandemia debido al ya conocido COVID-19
+        </p>
+      </div>
+
+      <div class="preguntas">
+        <p>
+          Para comenzar la encuesta, escriba su nombre porfavor.
+        </p>
+        <input
+          type="text"
+          id="nombre"
+          class="respuestas"
+          placeholder="Escriba su nombre"
+        />
+      </div>
+      <div class="preguntas">
+        <p>
+          Seleccione el numero correspondiente a su edad.
+        </p>
+      </div>
+
+      <div class="preguntas">
+        <input
+          id="edad"
+          class="respuestas"
+          type="number"
+          placeholder="Seleccione su edad"
+        />
+      </div>
+      <div class="preguntas">
+        <p>
+          Conoce usted los sintomas relacionados al Covid 19?
+        </p>
+
+        <select class="selector" id="sintomas">
+          <option></option>
+          <option>Si</option>
+          <option>No</option>
+          <option>No estoy muy seguro(a) </option>
+        </select>
+      </div>
+      <div class="preguntas">
+        <p>
+          Ha presentado algunos de los siguientes sintomas?
+        </p>
+        <select class="selector" id="sint">
+          <option></option>
+          <option>Tos</option>
+          <option>Fiebre</option>
+          <option>Perdida del gusto</option>
+          <option>Perdida del olfato</option>
+          <option>Todas las anteriores </option>
+          <option>Ninguno</option>
+        </select>
+      </div>
+      <div class="preguntas">
+        <p>
+          Ha tenido contacto con algun familiar o amigo de otra ciudad
+          recientemente?
+        </p>
+      </div>
+      <select class="selector" id="contacto">
+        <option></option>
+        <option>Si</option>
+        <option>No</option>
+        <option>Si, con un positivo a Covid</option>
+      </select>
+
+      <div class="preguntas">
+        <p>
+          Algun familiar o amigo cercano ha presentado alguno de los sintomas
+          antes mencionados?
+        </p>
+      </div>
+      <select class="selector" id="sintofam">
+        <option></option>
+        <option>Si</option>
+        <option>No</option>
+        <option>Algunos de los sintomas </option>
+      </select>
+      <div class="preguntas">
+        <p>
+          Cual de las siguientes opciones cree que no es util para la prevencion
+          del Covid 19?
+        </p>
+      </div>
+      <select class="selector" id="medida">
+        <option></option>
+        <option>Ingerir té</option>
+        <option>Bañarse con agua caliente</option>
+        <option>Hacer gargaras de agua con sal</option>
+        <option>Utilizar una mascarilla hecha de tela </option>
+        <option>Todas las anteriores</option>
+      </select>
+
+      <div class="preguntas">
+        <p>
+          Cuales medidas de bioseguridad utiliza actualmente?
+        </p>
+      </div>
+      <select class="selector" id="medidas">
+        <option></option>
+        <option>Mascarilla</option>
+        <option>Utilizo Gel</option>
+        <option>Me quedo en casa</option>
+        <option>Ninguna, soy inmune</option>
+        <option>Distanciamientiento Social</option>
+        <option>Mas de una de las opciones </option>
+        <option>Todas las opciones anteriores </option>
+      </select>
+
+      <input type="submit" id="boton" value="Enviar Respuestas" />
+    </form>
+
+    <div id="error"></div>
+    <script src="nuevos.js"></script>
+  </body>
+</html>
