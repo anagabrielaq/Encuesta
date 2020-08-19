@@ -1,31 +1,10 @@
-var nombre = document.getElementById("nombre");
-var edad = document.getElementById("edad");
-var error = document.getElementById("error");
-var boton = document.getElementById("boton");
-var sintomas = document.getElementById("sintomas");
-var sint = document.getElementById("sint");
-var contacto = document.getElementById("contacto");
-var sintofam = document.getElementById("sintofam");
-var medida = document.getElementById("medida");
-var medidas = document.getElementById("medidas");
-
-error.style.color = "red";
-
-var form = document.getElementById("form");
-form.addEventListener("submit", function (event) {
+// function capturar() {
+//   console.log("capturado");
+//   capturar.preventDefault();
+// }
+function enviar(event) {
   event.preventDefault();
   var mensajesError = [];
-
-  if (nombre.value === null || nombre.value === "") {
-    mensajesError.push("Hace falta ingresar el nombre     ");
-  }
-
-  if (nombre.value.length >= 1 && nombre.value.length <= 2) {
-    alert(
-      "Ingrese un nombre valido. El nombre debe de contener minimo 3 caracteres"
-    );
-    return false;
-  }
 
   if (edad.value === null || edad.value === "") {
     mensajesError.push("    Hace falta ingresar su edad    ");
@@ -64,5 +43,76 @@ form.addEventListener("submit", function (event) {
       "Gracias por Completar la encuesta! Sus respuestas son de mucha ayuda!"
     );
   }
+  if (mensajesError.length === 0) {
+    capturar();
+  }
   error.innerHTML = mensajesError.join(",");
-});
+}
+function capturar() {
+  //console.log("capturado");
+  function Formulario(
+    nombre,
+    edad,
+    error,
+    // boton,
+    sintomas,
+    sint,
+    contacto,
+    sintofam,
+    medida,
+    medidas
+  ) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.error = error;
+    // this.boton = boton;
+    this.sintomas = sintomas;
+    this.sint = sint;
+    this.contacto = contacto;
+    this.sintofam = sintofam;
+    this.medida = medida;
+    this.medidas = medidas;
+  }
+  var nombre = document.getElementById("nombre").value;
+  var edad = document.getElementById("edad").value;
+  // var boton = document.getElementById("boton").value;
+  var sintomas = document.getElementById("sintomas").value;
+  var error = document.getElementById("error").value;
+  var sint = document.getElementById("sint").value;
+  var contacto = document.getElementById("contacto").value;
+  var sintofam = document.getElementById("sintofam").value;
+  var medida = document.getElementById("medida").value;
+  var medidas = document.getElementById("medidas").value;
+
+  nuevoForm = new Formulario(
+    nombre,
+    edad,
+    error,
+    // boton,
+    sintomas,
+    sint,
+    contacto,
+    sintofam,
+    medida,
+    medidas
+  );
+  console.log(nuevoForm);
+  agregar();
+  // capturar.preventDefault();
+}
+
+var baseDatos = JSON.parse(localStorage.getItem("formulario") || "[]");
+function agregar() {
+  baseDatos.push(nuevoForm);
+  localStorage.setItem("formulario", JSON.stringify(baseDatos));
+  console.log("Mi arreglo es:", baseDatos);
+}
+
+// function display() {
+//   console.log(baseDatos);
+// }
+
+error.style.color = "red";
+
+var form = document.getElementById("form");
+form.addEventListener("submit", enviar);

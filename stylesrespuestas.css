@@ -1,0 +1,9 @@
+body {
+  background-image: url(https://services.meteored.com/img/article/ola-de-calor-y-mascarillas-principales-riesgos-a-tener-en-cuenta-262941-2_768.jpg);
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
+  margin: 0;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
